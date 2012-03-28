@@ -1,12 +1,22 @@
 
 /**
  * Created by JetBrains PhpStorm.
- * User: Jason BRashear
+ * User: Jason Brashear
  * Date: 3/22/12
  * Time: 3:42 PM
  * 
  */
+What is uSendit? This uSendit is a way to to send files to a user by allowing a person to upload the file to a server and the system emails 
+the recipient of the file a notice that they have a new file to be downloaded. This helps when having to send files larger then 25mb to someone.
 
-This program is not currently complete. I just started this project and needed a home. I am also looking for people
-to help with this project. If you are interested in this please let me know. jason@austinfx.com
+Alpha 1.1 
+Date 03/28/2012
+Features:
+	* File name encryption.
+	* transactions are stored into a MySQL table
+	* short form and simple to use
+
+The latest release is Alpha 1.1
+This release includes a working installation.
+. jason@austinfx.com
 
