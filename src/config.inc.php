@@ -24,5 +24,10 @@ define("ARRAY_A","ARRAY_A",true);
 define("ARRAY_N","ARRAY_N",true);
 
 // ==================================================================
+// Domain name inclue host name ie www.mydomain.com
+define("USENDIT_DOMAIN", "localhost");
+// installed directoy if installed in the root folder set to: /
+// include forward slashes /foldername/
+define("USENDIT_FOLDER", "/usendit/");
 // File upload Path
 define("USENDIT_UPLOADS", "/Applications/MAMP/htdocs/uSendit/uploads/"); // full path: /path/to/uploads/

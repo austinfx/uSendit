@@ -46,14 +46,14 @@ $ran2 = $ran1.".";
 $target = $target . $ran2.$ext;
 
 if(move_uploaded_file($_FILES['uploaded']['tmp_name'], $target))
-         {
-        echo "The file has been uploaded as ".$ran2.$ext; //testing for now.
-            }
-        else
-        {
-            echo "Sorry, there was a problem uploading your file."; // echo is for testing convert to a variable for html output.
+{
+    echo "The file has been uploaded as ".$ran2.$ext ."<br />"; //testing for now.
+}
+else
+{
+    echo "Sorry, there was a problem uploading your file.<br />"; // echo is for testing convert to a variable for html output.
 
-        }
+}
 
 
 // Now we need to insert entry into the database if the file was sucesful.
@@ -62,6 +62,9 @@ if(move_uploaded_file($_FILES['uploaded']['tmp_name'], $target))
 $db->query("INSERT INTO fileUpload (senderName, SenderEmail, receiverEmail, fileMessage, fileKey, 	fileNameOriginal, fileReason)
 VALUES ('$sender_full_name','$sender_email','$receiver_email','$fileMessage','$ran1','$original','File too Large for Email')");
 // $db->debug();
+
+$location = USENDIT_DOMAIN.USENDIT_FOLDER;
+
 // now we need to create the email for sender
 
 
@@ -70,7 +73,12 @@ VALUES ('$sender_full_name','$sender_email','$receiver_email','$fileMessage','$r
 // Contact subject
 $subject ="You Have a New file from $sender_full_name Sent By uSendit";
 // Details
-$message="$fileMessage";
+$message="$sender_full_name has sent you a new file for down load. \n";
+$message .="$sender_full_name wrote: $fileMessage \n";
+$message .="To download this file click the link below: \n";
+$message .="http://$location"."download.php?f="."$ran2"."$ext";
+
+
 
 // Mail of sender
 $mail_from="$sender_email";
